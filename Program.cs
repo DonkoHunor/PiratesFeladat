@@ -1,29 +1,29 @@
 ﻿using PiratesFeladat;
 using System;
 
-Ship s1 = new Ship();
-s1.FillShip();
+Ship BlackPearl = new Ship();
+BlackPearl.FillShip();
 
-Ship s2 = new Ship();
-s2.FillShip();
+Ship FlyingDutchman = new Ship();
+FlyingDutchman.FillShip();
 
 do
 {
-	Console.WriteLine(s1.ToString());
+	Console.WriteLine(BlackPearl.ToString());
 	Console.WriteLine();
-	Console.WriteLine(s2.ToString());
+	Console.WriteLine(FlyingDutchman.ToString());
 
-	if (s1.Battle(s2))
+	if (BlackPearl.Battle(FlyingDutchman))
 	{
-		Console.WriteLine("s1 won!");
+		Console.WriteLine("The Black Pearl won!");
 	}
 	else
 	{
-		Console.WriteLine("s1 lost!");
+		Console.WriteLine("The Black Pearl lost!");
 	}
     Console.WriteLine("------------------------------------------------------------------------------------------------------------------");
-} while (!s1.Captian.Death && !s2.Captian.Death && s1.Crew.Count() > 10 && s2.Crew.Count() > 10);
+} while ((!BlackPearl.Captian.Death && !FlyingDutchman.Captian.Death) && (BlackPearl.CrewSize() > 10 && FlyingDutchman.CrewSize() > 10));
 
-Console.WriteLine(s1.ToString());
+Console.WriteLine(BlackPearl.ToString());
 Console.WriteLine();
-Console.WriteLine(s2.ToString());
+Console.WriteLine(FlyingDutchman.ToString());

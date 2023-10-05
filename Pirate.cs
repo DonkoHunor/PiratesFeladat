@@ -50,29 +50,22 @@ namespace PiratesFeladat
 
 		public void DrinkSomeRum2()
 		{
-			Check();
-			if(this.passout)
+			
+			if (intoxication > 0 && this.passout)
 			{
 				intoxication -= 2;
 			}
-			else
-			{
-				this.intoxication++;
-			}			
-		}
-
-		public void Check()
-		{
-			if (intoxication > 3)
+			else if (intoxication > 3 && !this.passout)
 			{
 				this.passout = true;
 			}
-			else 
+			else
 			{
 				this.passout = false;
+				intoxication++;
 			}
 		}
-
+		
 		public void HowsItGoingMate()
 		{
 			if(death)

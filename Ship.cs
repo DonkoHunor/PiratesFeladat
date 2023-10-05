@@ -35,6 +35,19 @@ namespace PiratesFeladat
 			}
 		}
 
+		public int CrewSize()
+		{
+			int crewS = 0;
+            foreach (var item in crew)
+            {
+				if (!item.Death)
+				{
+					crewS++;
+				}
+            }
+			return crewS;
+        }
+
 		public int Score()
 		{
 			int score = 0;
